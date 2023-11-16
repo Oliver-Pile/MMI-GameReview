@@ -7,7 +7,6 @@
   "author": "S240260 <s240260@uos.ac.uk>",
   "dependencies": {
     "bootstrap": "^5.3.2",
-    "jquery": "^3.7.1",
-    "lightbox2": "^2.11.4"
+    "jquery": "^3.7.1"
   }
 }
