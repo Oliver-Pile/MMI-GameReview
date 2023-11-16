@@ -1,0 +1,14 @@
+{
+  "name": "game-review",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "repository": "https://github.com/Oliver-Pile/MMI-GameReview.git",
+  "author": "S240260 <s240260@uos.ac.uk>",
+  "dependencies": {
+    "bootstrap": "^5.3.2",
+    "jquery": "^3.7.1",
+    "lightbox2": "^2.11.4",
+    "sass": "^1.69.5"
+  }
+}

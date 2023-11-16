@@ -1,0 +1,6 @@
+{
+    "name": "s240260/game-review",
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
