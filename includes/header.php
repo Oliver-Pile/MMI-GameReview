@@ -5,6 +5,7 @@
     <title>Game Review!</title>
     <script src="https://kit.fontawesome.com/61a869ab1a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="../assets/icon.png">
   </head>
   <body id="page-<?php echo $page; ?>">
   <header>
