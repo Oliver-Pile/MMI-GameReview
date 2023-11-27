@@ -1,3 +1,11 @@
-.game-row {
-  background-color: $secondary-color;
+#games-for-genre-page{
+  text-decoration: none;
+
+  .game-row {
+    background-color: $secondary-color;
+  }
+
+  .card-body{
+    color: $text-black;
+  }
 }
