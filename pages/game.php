@@ -4,7 +4,7 @@
   $game = $Game->getGame($id);
 ?>
 
-<div class="container">
+<div class="container" id="game-page">
   <h1><?php echo $game["title"]?></h1>
   <div class="row">
     <div class="col-md-4">

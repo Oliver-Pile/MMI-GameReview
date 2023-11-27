@@ -3,7 +3,7 @@
   $genres = $Genre->getAllgenres();
 ?>
 
-<div class="container">
+<div class="container" id="genres-page">
   <h1> Genres </h1>
   <div class="row">
   <?php foreach($genres as $genre) { ?>
