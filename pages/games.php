@@ -15,7 +15,7 @@
       <div class="col-md-12 card">
         <div class="row game-row">
         <div class="col-md-3">
-          <img class="card-image" src="images/genre-images/fps_image.jpeg"/>
+          <img class="card-image" src="images/game-images/<?php echo $game["image"]; ?>"/>
         </div>
         <div class="col-md-9">
           <div class="d-inline-block">
