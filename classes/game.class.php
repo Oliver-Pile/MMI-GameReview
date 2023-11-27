@@ -14,6 +14,15 @@
         ]);
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getGame($id) {
+      $query = "SELECT * FROM Game WHERE id = :id";
+      $stmt = $this->Conn->prepare($query);
+      $stmt->execute([
+        "id" => $id
+        ]);
+      return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
   }
 
 ?>
