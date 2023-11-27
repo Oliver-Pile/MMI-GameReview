@@ -9,7 +9,11 @@
   <?php foreach($genres as $genre) { ?>
     <div class="col-lg-6">
       <div class="card card-body">
-          <h3><?php echo $genre['name']; ?></h3>
+        <div class = "d-flex">
+          <div class="genre-card-image" style="background-image: url('./images/genre-images/<?php echo $genre['image']; ?>');">
+          </div>
+          <div class="genre-title"><h3><?php echo $genre['name']; ?></h3></div>
+        </div>
       </div>
     </div>
     <?php } ?>
