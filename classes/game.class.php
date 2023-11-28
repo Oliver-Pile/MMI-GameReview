@@ -16,7 +16,7 @@
     }
 
     public function getAllGames() {
-      $query = "SELECT * FROM Game";
+      $query = "SELECT ga.*, ge.name AS genre_name FROM Game AS ga JOIN Genre AS ge ON ga.genre_id = ge.id ORDER BY ga.title;";
       $stmt = $this->Conn->prepare($query);
       $stmt->execute();
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
