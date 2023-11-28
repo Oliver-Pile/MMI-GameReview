@@ -1,13 +1,14 @@
 <?php
-  $id = $_GET["id"];
+  $game_id = $_GET["id"];
   $Game = new Game($Conn);
-  $game = $Game->getGame($id);
+  $game = $Game->getGame($game_id);
   $Review = new Review($Conn);
-  $reviews = $Review->getAllReviewsForGame($id);
-  $average_raiting = round($Review->calculateRatingForGame($id)["avg_rating"], 1);
+  $reviews = $Review->getAllReviewsForGame($game_id);
+  $average_raiting = round($Review->calculateRatingForGame($game_id)["avg_rating"], 1);
 ?>
 
 <div class="container" id="game-page">
+  <?php require_once(__DIR__ . '/add_review_modal.php') ?>
   <h1><?php echo $game["title"]?></h1>
   <div class="row">
     <div class="col-md-4">
@@ -17,11 +18,12 @@
       <p><?php echo $game["description"] ?></p>
       <h4> Average Raiting </h4>
       <p class="raiting-text"> <?php echo $average_raiting ?> <i class="fa-solid fa-star"></i></p>
+      <button id="addReview" type="button" class="btn btn-review" data-bs-toggle="modal" data-bs-target="#addReviewModal"> Add Review </button>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
-      <h2> Reviews </h2>
+      <h2> Reviews </h2> 
       <div class="d-flex flex-column">
         <?php foreach ($reviews as $review) { ?>
           <div class="card">
@@ -32,27 +34,6 @@
             </div>
           </div>
         <?php } ?>
-        <!-- Fake reviews below will be removed -->
-        <div class="card">
-          <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-          </p>
-        </div>
-        <div class="card">
-          <p>
-          Vel eros donec ac odio. Volutpat sed cras ornare arcu dui vivamus arcu felis bibendum. Lacus laoreet non curabitur gravida. Quis ipsum suspendisse ultrices gravida dictum fusce ut. Phasellus vestibulum lorem sed risus ultricies tristique.
-          </p>
-        </div>
-        <div class="card">
-          <p>
-          Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Etiam tempor orci eu lobortis elementum. Amet mauris commodo quis imperdiet massa tincidunt nunc. Adipiscing diam donec adipiscing tristique risus. Velit euismod in pellentesque massa placerat duis ultricies lacus sed. Turpis massa sed elementum tempus egestas sed sed.
-          </p>
-        </div>
-        <div class="card">
-          <p>
-          Mauris pharetra et ultrices neque ornare aenean euismod elementum. Nisi porta lorem mollis aliquam ut porttitor leo a diam. Vel facilisis volutpat est velit egestas dui id ornare arcu. Pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies. Ultrices gravida dictum fusce ut.
-          </p>
-        </div>
       </div>
     </div>
     <div class="col-md-6">
@@ -62,5 +43,4 @@
       </p>
     </div>
   </div>
-
 </div>

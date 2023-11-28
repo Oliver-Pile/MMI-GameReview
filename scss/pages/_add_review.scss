@@ -1,0 +1,11 @@
+#addReviewModal {
+  color: $text-black;
+
+  .modal-content{
+    background-color: $secondary-color;
+  }
+
+  form input, textarea {
+    margin-bottom: 16px;
+  }
+}

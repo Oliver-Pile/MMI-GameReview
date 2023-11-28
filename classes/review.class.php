@@ -34,6 +34,32 @@
       return $stmt->fetch(PDO::FETCH_ASSOC);
       }
     
+    public function addReviewForGame($content, $raiting, $game_id, $user_id){
+      $query = "INSERT INTO Review (content, raiting) VALUES (:content, :raiting)";
+      $stmt = $this->Conn->prepare($query);
+      $review_exec = $stmt->execute(array(
+        'content' => $content,
+        'raiting' => $raiting
+      ));
+
+      $review_id = $this->Conn->lastInsertId();
+
+      $query = "INSERT INTO Review_Game_Join (review_id, game_id) VALUES (:review_id, :game_id)";
+      $stmt = $this->Conn->prepare($query);
+      $game_join_exec = $stmt->execute(array(
+        'review_id' => $review_id,
+        'game_id' => $game_id
+      ));
+
+      $query = "INSERT INTO Review_User_Join (review_id, user_id) VALUES (:review_id, :user_id)";
+      $stmt = $this->Conn->prepare($query);
+      $user_join_exec = $stmt->execute(array(
+        'review_id' => $review_id,
+        'user_id' => $user_id
+      ));
+
+      return $review_exec && $game_join_exec && $user_join_exec;
+    }
   }
 
 ?>

@@ -11,4 +11,17 @@
   .card {
     padding: 16px;
   }
+
+  .btn-review {
+    background-color: $header-color;
+    color: $text-black;
+  }
+
+  .btn-refresh {
+    color: $secondary-color;
+  }
+
+  .row {
+    margin-top: 16px;
+  }
 }
