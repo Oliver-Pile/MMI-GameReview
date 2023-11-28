@@ -30,6 +30,17 @@
 
     if ($errors) {
       displayErrors($errors);
+    } else {
+      $user = $User -> loginUser($email, $password);
+        if ($user) {
+          echo '<div class="alert alert-success" role="alert">';
+            echo "Login Successful - Welcome back.";
+          echo '</div>';
+        } else {
+          echo '<div class="alert alert-danger" role="alert">';
+            echo "Login Failed - Please check the credentials";
+          echo '</div>';
+        }
     }
   }
 

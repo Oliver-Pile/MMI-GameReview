@@ -17,5 +17,17 @@
       ));
     }
 
+    public function loginUser($email, $password) {
+      $query = "SELECT * FROM User WHERE email = :email";
+      $stmt = $this->Conn->prepare($query);
+      $stmt->execute(array('email' => $email));
+      $user = $stmt->fetch();
+      if($user && password_verify($password, $user['password'])) {
+        return $user;
+      } else{
+        return false;
+      }
+    }
+
 }
 ?>
