@@ -12,7 +12,7 @@
   <h1><?php echo $game["title"]?></h1>
   <div class="row">
     <div class="col-md-4">
-      <img class="game-image" src="images/game-images/<?php echo $game["image"]; ?>"/>
+    <div class="game-image" style="background-image: url(images/game-images/<?php echo $game["image"]; ?>)"></div>
     </div>
     <div class="col-md-8">
       <p><?php echo $game["description"] ?></p>
