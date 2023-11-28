@@ -11,6 +11,7 @@
     if ($errors) {
       displayErrors($errors);
     } else {
+      // TODO: Verify email does not already exist
       $userCreated = $User -> createUser($email, $username, $password);
       if($userCreated) {
         displayAlert("User created - Please login", "success");
@@ -31,7 +32,7 @@
         if ($user) {
           displayAlert("Login Successful - Welcome back.", "success");
         } else {
-          displayAlert("Login Failed - Please check the credentials - Welcome back.", "danger");
+          displayAlert("Login Failed - Please check the credentials", "danger");
         }
     }
   }

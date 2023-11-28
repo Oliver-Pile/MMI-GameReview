@@ -1,0 +1,25 @@
+#login-page {
+
+  .btn {
+    margin-top: 8px;
+  }
+
+  .btn-login {
+    background-color: green;
+  }
+
+  .btn-reg {
+    background-color: $header-color;
+  }
+
+  form {
+    label {
+      color: $secondary-color;
+    }
+
+    input {
+      margin-bottom: 4px;
+    }
+  }
+
+}
