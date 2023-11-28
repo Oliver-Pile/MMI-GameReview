@@ -13,13 +13,9 @@
     } else {
       $userCreated = $User -> createUser($email, $username, $password);
       if($userCreated) {
-        echo '<div class="alert alert-success" role="alert">';
-          echo "User created - Please login!";
-        echo '</div>';
+        displayAlert("User created - Please login", "success");
       } else {
-        echo '<div class="alert alert-danger" role="alert">';
-          echo "An error occured, please try again later";
-        echo '</div>';
+        displayAlert("An error occured, please try again later", "danger");
       }
     }
   } else if($_POST['login']) {
@@ -33,21 +29,22 @@
     } else {
       $user = $User -> loginUser($email, $password);
         if ($user) {
-          echo '<div class="alert alert-success" role="alert">';
-            echo "Login Successful - Welcome back.";
-          echo '</div>';
+          displayAlert("Login Successful - Welcome back.", "success");
         } else {
-          echo '<div class="alert alert-danger" role="alert">';
-            echo "Login Failed - Please check the credentials";
-          echo '</div>';
+          displayAlert("Login Failed - Please check the credentials - Welcome back.", "danger");
         }
     }
   }
 
-  function displayErrors($errors) {
-    echo '<div class="alert alert-danger" role="alert">';
-      echo join("<br>", $errors);
+  function displayAlert($message, $type) {
+    echo '<div class="alert alert-' . $type .'" role="alert">';
+      echo $message;
     echo '</div>';
+  }
+
+  function displayErrors($errors) {
+    $message = join("<br>", $errors);
+    displayAlert($message, "danger");
   }
 
   function validateReg($email, $username, $password, $confirm_password) {
