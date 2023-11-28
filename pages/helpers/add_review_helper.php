@@ -7,13 +7,17 @@
     $errors = validate($content, $raiting);
 
     if ($errors) {
-      displayErrors($errors);
+      $message = join("<br>", $errors);
+      $_SESSION["failure_message"] = $message;
+      header("Location: index.php?p=game&id=".$game_id);
     } else {
       $reviewCreated = $Review -> addReviewForGame($content, $raiting, $game_id, $_SESSION['user']['id']);
       if($reviewCreated) {
-        displayAlert("Review successfuly created", "success");
+        $_SESSION["success_message"] = "Review successfuly created";
+        header("Location: index.php?p=game&id=".$game_id);
       } else {
-        displayAlert("An error occured, please try again later", "danger");
+        $_SESSION["failure_message"] = "An error occured, please try again later";
+        header("Location: index.php?p=game&id=".$game_id);
       }
     }
   }
@@ -44,14 +48,4 @@
     return $error;
   }
 
-  function displayAlert($message, $type) {
-    echo '<div class="alert alert-' . $type .'" role="alert">';
-      echo $message;
-    echo '</div>';
-  }
-
-  function displayErrors($errors) {
-    $message = join("<br>", $errors);
-    displayAlert($message, "danger");
-  }
 ?>
