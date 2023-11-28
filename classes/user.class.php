@@ -29,5 +29,12 @@
       }
     }
 
+    public function getUser($id) {
+      $query = "SELECT * FROM User WHERE id = :id";
+      $stmt = $this->Conn->prepare($query);
+      $stmt->execute(array(':id' => $id));
+      return $stmt->fetch();
+    }
+
 }
 ?>

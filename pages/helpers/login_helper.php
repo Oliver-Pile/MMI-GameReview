@@ -30,6 +30,8 @@
     } else {
       $user = $User -> loginUser($email, $password);
         if ($user) {
+          $_SESSION['is_loggedin'] = true;
+          $_SESSION['user'] = $user;
           displayAlert("Login Successful - Welcome back.", "success");
         } else {
           displayAlert("Login Failed - Please check the credentials", "danger");

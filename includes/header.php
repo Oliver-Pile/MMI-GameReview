@@ -24,6 +24,13 @@
             <li class="nav-item">
               <a class="nav-link" href="index.php?p=genres"><i class="fa-solid fa-gamepad"></i>Genres</a>
             </li>
+            <li class="nav-item">
+              <?php if ($_SESSION['is_loggedin']) { ?>
+                <a class="nav-link" href="index.php?p=logout"></i>Logout</a>
+                <?php } else { ?>
+                  <a class="nav-link" href="index.php?p=login"></i>Login/Register</a>
+              <?php } ?>
+            </li>
           </ul>
         </div>
       </div>
