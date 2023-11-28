@@ -7,10 +7,12 @@
     }
 
     public function getAllReviewsForGame($game_id){
-      $query = "SELECT r.*
+      $query = "SELECT r.*, u.username
         FROM Review AS r
-        JOIN Review_Game_Join rg ON r.id = rg.review_id
+        JOIN Review_Game_Join AS rg ON r.id = rg.review_id
         JOIN Game AS g ON rg.game_id = g.id
+        JOIN Review_User_Join AS ru ON r.id = ru.review_id
+        JOIN User AS u ON ru.user_id = u.id
         WHERE g.id = :game_id";
       $stmt = $this->Conn->prepare($query);
       $stmt->execute([

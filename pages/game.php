@@ -25,12 +25,14 @@
       <div class="d-flex flex-column">
         <?php foreach ($reviews as $review) { ?>
           <div class="card">
+            <h4 class="card-title"><?php echo $review["username"] ?></h4>
             <p><?php echo $review["content"]; ?></p>
             <div class="raiting-text">
               <p><?php echo $review["raiting"]; ?><i class="fa-solid fa-star"></i></p>
             </div>
           </div>
         <?php } ?>
+        <!-- Fake reviews below will be removed -->
         <div class="card">
           <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum

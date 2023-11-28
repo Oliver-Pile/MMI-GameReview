@@ -1,6 +1,10 @@
 USE GameReview;
 
 
+/* Insert test data for the User table */ 
+INSERT INTO User (email, username, password) VALUES("test@example.com", "Test User", "password");
+INSERT INTO User (email, username, password) VALUES("foo@example.com", "Foo User", "password");
+
 /* Insert test data for the Genre table */ 
 INSERT INTO Genre (name, image) VALUES("FPS", "fps_image.jpeg");
 INSERT INTO Genre (name, image) VALUES("Open-World", "open_world_image.jpeg");
@@ -22,3 +26,7 @@ INSERT INTO Review (content, raiting) VALUES("Pretty good game. Lots of bugs", 3
 INSERT INTO Review_Game_Join (review_id, game_id) VALUES(1, 1);
 INSERT INTO Review_Game_Join (review_id, game_id) VALUES(2, 1);
 INSERT INTO Review_Game_Join (review_id, game_id) VALUES(3, 1);
+
+INSERT INTO Review_User_Join (review_id, user_id) VALUES(1, 1);
+INSERT INTO Review_User_Join (review_id, user_id) VALUES(2, 1);
+INSERT INTO Review_User_Join (review_id, user_id) VALUES(3, 2);
