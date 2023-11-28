@@ -22,7 +22,10 @@
               <a class="nav-link" href="index.php?p=home"><i class="fa-solid fa-house"></i>Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.php?p=genres"><i class="fa-solid fa-gamepad"></i>Genres</a>
+              <a class="nav-link" href="index.php?p=genres"><i class="fa-solid fa-book-open"></i>Genres</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.php?p=all_games"><i class="fa-solid fa-gamepad"></i>Games</a>
             </li>
             <li class="nav-item">
               <?php if ($_SESSION['is_loggedin']) { ?>

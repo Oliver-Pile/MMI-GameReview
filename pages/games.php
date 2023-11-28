@@ -1,7 +1,7 @@
 <?php
   $genre_id = $_GET["genre_id"];
   $Game = new Game($Conn);
-  $games = $Game->getAllGames($genre_id);
+  $games = $Game->getAllGamesForGenre($genre_id);
   $Genre = new Genre($Conn);
   $current_genre = $Genre->getGenre($genre_id);
 ?>
