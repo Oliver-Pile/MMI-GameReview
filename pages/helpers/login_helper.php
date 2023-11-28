@@ -1,4 +1,5 @@
 <?php
+  $User = new User($Conn);
   if($_POST['reg']) {
     $email = htmlspecialchars($_POST["email"]);
     $username = htmlspecialchars($_POST["username"]);
@@ -9,6 +10,17 @@
 
     if ($errors) {
       displayErrors($errors);
+    } else {
+      $userCreated = $User -> createUser($email, $username, $password);
+      if($userCreated) {
+        echo '<div class="alert alert-success" role="alert">';
+          echo "User created - Please login!";
+        echo '</div>';
+      } else {
+        echo '<div class="alert alert-danger" role="alert">';
+          echo "An error occured, please try again later";
+        echo '</div>';
+      }
     }
   } else if($_POST['login']) {
     $email = htmlspecialchars($_POST["email"]);
