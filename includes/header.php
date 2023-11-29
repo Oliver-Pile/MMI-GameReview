@@ -27,13 +27,18 @@
             <li class="nav-item">
               <a class="nav-link" href="index.php?p=all_games"><i class="fa-solid fa-gamepad"></i>Games</a>
             </li>
-            <li class="nav-item">
-              <?php if ($_SESSION['is_loggedin']) { ?>
-                <a class="nav-link" href="index.php?p=logout"></i>Logout</a>
-                <?php } else { ?>
-                  <a class="nav-link" href="index.php?p=login"></i>Login/Register</a>
-              <?php } ?>
-            </li>
+            <?php if ($_SESSION['is_loggedin']) { ?>
+              <li class="nav-item">
+                <a class="nav-link" href="index.php?p=account"><i class="fa-solid fa-circle-user"></i>Account</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.php?p=logout">Logout</a>
+              </li>
+            <?php } else { ?>
+              <li class="nav-item">
+                <a class="nav-link" href="index.php?p=login"></i>Login/Register</a>
+              </li>
+            <?php } ?>
           </ul>
         </div>
       </div>
