@@ -9,6 +9,6 @@
     <label for="photo">Photo</label>
     <input type="file" class="form-control-file" name="photo">
   </div>
-  <button type="submit" class="btn btn-primary">Update Profile Photo</button>
+  <button type="submit" class="btn btn-blue">Update Profile Photo</button>
   </form>
 </div>

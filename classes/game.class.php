@@ -30,6 +30,15 @@
         ]);
       return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function searchGames($user_query){
+      $query = "SELECT ga.*, ge.name AS genre_name FROM Game AS ga JOIN Genre AS ge ON ga.genre_id = ge.id WHERE ga.title LIKE :query ORDER BY ga.title";
+      $stmt = $this->Conn->prepare($query);
+      $stmt->execute([
+        "query" => "%".$user_query."%"
+        ]);
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
   }
 
 ?>

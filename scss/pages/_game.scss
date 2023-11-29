@@ -7,11 +7,6 @@
     padding: 16px;
   }
 
-  .btn-review {
-    background-color: $header-color;
-    color: $text-black;
-  }
-
   .btn-refresh {
     color: $secondary-color;
   }
@@ -23,7 +18,7 @@
   .review-header{
     display: flex;
     justify-content: space-between;
-    
+
     .review-user-image{
       width: 64px;
       height: 64px;

@@ -1,11 +1,10 @@
-<?php
+<?PHP
+  $query = htmlspecialchars($_POST['query']);
   $Game = new Game($Conn);
-  $games = $Game->getAllGames();
+  $games = $Game->searchGames($query);
 ?>
-
-<div class="container" id="all-games-page">
-  <h1>Browse All Games</h1>
-
+<div class="container">
+  <h1 class="mb-4 pb-2">Search results for "<?php echo $query; ?>"</h1>
   <div class="row">
     <?php foreach($games as $game) { ?>
       <div class="col-6 col-lg-4">

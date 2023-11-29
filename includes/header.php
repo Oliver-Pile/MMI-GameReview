@@ -40,6 +40,10 @@
               </li>
             <?php } ?>
           </ul>
+          <form action="index.php?p=search" method="post" class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search for games" name="query" aria-label="Search">
+            <button class="btn btn-black" type="submit">Search</button>
+          </form>
         </div>
       </div>
     </nav>

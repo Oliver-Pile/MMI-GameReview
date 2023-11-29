@@ -6,5 +6,5 @@
       echo '<div class="user-image" style="background-image: url(images/user-images/'.$_SESSION['user']['image'].'"></div>';
     }
   ?>
-  <p><a class="btn btn-primary" href="index.php?p=edit_profile_image">Edit Profile Image</a></p>
+  <p><a class="btn btn-blue" href="index.php?p=edit_profile_image">Edit Profile Image</a></p>
 </div>

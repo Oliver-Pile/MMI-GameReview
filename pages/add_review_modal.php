@@ -19,7 +19,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="submit" name="review" value="1" class="btn btn-review">Add Review</button>
+            <button type="submit" name="review" value="1" class="btn btn-blue">Add Review</button>
           </div>
         </form>
       <?php } else { ?>

@@ -21,7 +21,7 @@
       <p><?php echo $game["description"] ?></p>
       <h4> Average Raiting </h4>
       <p class="raiting-text"> <?php echo $average_raiting ?> <i class="fa-solid fa-star"></i></p>
-      <button id="addReview" type="button" class="btn btn-review" data-bs-toggle="modal" data-bs-target="#addReviewModal"> Add Review </button>
+      <button id="addReview" type="button" class="btn btn-blue" data-bs-toggle="modal" data-bs-target="#addReviewModal"> Add Review </button>
     </div>
   </div>
   <div class="row">
