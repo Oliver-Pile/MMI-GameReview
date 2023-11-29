@@ -14,9 +14,11 @@
       // TODO: Verify email does not already exist
       $userCreated = $User -> createUser($email, $username, $password);
       if($userCreated) {
-        displayAlert("User created - Please login", "success");
+        $_SESSION["success_message"] = "User created - Please login";
+        header("Location: index.php?p=login");
       } else {
-        displayAlert("An error occured, please try again later", "danger");
+        $_SESSION["failure_message"] = "An error occured, please try again later";
+        header("Location: index.php?p=login");
       }
     }
   } else if($_POST['login']) {
@@ -32,22 +34,19 @@
         if ($user) {
           $_SESSION['is_loggedin'] = true;
           $_SESSION['user'] = $user;
-          displayAlert("Login Successful - Welcome back.", "success");
+          $_SESSION["success_message"] = "Login Successful - Welcome back.";
+          header("Location: index.php?p=home");
         } else {
-          displayAlert("Login Failed - Please check the credentials", "danger");
+          $_SESSION["failure_message"] = "Login Failed - Please check the credentials";
+          header("Location: index.php?p=login");
         }
     }
   }
 
-  function displayAlert($message, $type) {
-    echo '<div class="alert alert-' . $type .'" role="alert">';
-      echo $message;
-    echo '</div>';
-  }
-
   function displayErrors($errors) {
     $message = join("<br>", $errors);
-    displayAlert($message, "danger");
+    $_SESSION["failure_message"] = $message;
+    header("Location: index.php?p=login");
   }
 
   function validateReg($email, $username, $password, $confirm_password) {
