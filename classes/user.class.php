@@ -36,5 +36,15 @@
       return $stmt->fetch();
     }
 
+    public function updateUserProfile($user_id, $file_name) {
+      $query = "UPDATE User SET image = :image WHERE id = :id";
+      $stmt = $this->Conn->prepare($query);
+      $stmt->execute(array(
+      'image' => $file_name,
+      'id' => $user_id
+      ));
+      return true;
+    }
+
 }
 ?>

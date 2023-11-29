@@ -1,0 +1,13 @@
+.user-image{
+  width: 25%;
+  height: 128px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+}
+
+@media (min-width: 992px) {
+  .user-image{
+    height: 256px;
+  }
+}
