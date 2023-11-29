@@ -12,6 +12,7 @@
 <div class="container" id="game-page">
   <?php 
     require_once(__DIR__ . '/add_review_modal.php'); 
+    require_once(__DIR__ . '/helpers/review_helper.php'); 
     
     if($success_message) {
       require_once(__DIR__ . '/components/success_alert.php'); 
@@ -39,7 +40,10 @@
       <div class="d-flex flex-column">
         <?php foreach ($reviews as $review) { ?>
           <div class="card">
-            <h4 class="card-title"><?php echo $review["username"] ?></h4>
+            <div class="card-title review-header">
+              <h4 class="card-title"><?php echo $review["username"] ?></h4>
+              <img class="review-user-image" src="images/user-images/<?php getProfilePic($review) ?>" >
+            </div>
             <p><?php echo $review["content"]; ?></p>
             <div class="raiting-text">
               <p><?php echo $review["raiting"]; ?><i class="fa-solid fa-star"></i></p>

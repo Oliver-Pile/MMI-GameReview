@@ -7,7 +7,7 @@
     }
 
     public function getAllReviewsForGame($game_id){
-      $query = "SELECT r.*, u.username
+      $query = "SELECT r.*, u.username, u.image
         FROM Review AS r
         JOIN Review_Game_Join AS rg ON r.id = rg.review_id
         JOIN Game AS g ON rg.game_id = g.id
