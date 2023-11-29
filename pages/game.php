@@ -5,23 +5,14 @@
   $Review = new Review($Conn);
   $reviews = $Review->getAllReviewsForGame($game_id);
   $average_raiting = round($Review->calculateRatingForGame($game_id)["avg_rating"], 1);
-  $success_message = htmlspecialchars($_SESSION["success_message"]);
-  $failure_message = htmlspecialchars($_SESSION["failure_message"]);
 ?>
 
 <div class="container" id="game-page">
   <?php 
+    require(__DIR__ . '/components/alerts.php'); 
     require_once(__DIR__ . '/add_review_modal.php'); 
     require_once(__DIR__ . '/helpers/review_helper.php'); 
-    
-    if($success_message) {
-      require_once(__DIR__ . '/components/success_alert.php'); 
-      $_SESSION["success_message"] = null;
-    } else if ($failure_message) {
-      require_once(__DIR__ . '/components/failure_alert.php'); 
-      $_SESSION["failure_message"] = null;
-    }
-    ?>
+  ?>
   <h1><?php echo $game["title"]?></h1>
   <div class="row">
     <div class="col-md-4">
