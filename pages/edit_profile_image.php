@@ -1,6 +1,5 @@
 <div class="container">
   <?php
-    require(__DIR__ . '/components/alerts.php');
     require_once(__DIR__ . '/helpers/edit_profile_image_helper.php');
   ?>
   <h1> Update Profile Photo </h1>

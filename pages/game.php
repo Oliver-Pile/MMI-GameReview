@@ -9,7 +9,6 @@
 
 <div class="container" id="game-page">
   <?php 
-    require(__DIR__ . '/components/alerts.php'); 
     require_once(__DIR__ . '/add_review_modal.php'); 
     require_once(__DIR__ . '/helpers/review_helper.php'); 
   ?>

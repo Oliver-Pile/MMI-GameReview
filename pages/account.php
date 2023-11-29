@@ -1,5 +1,4 @@
 <div class="container">
-  <?php require(__DIR__ . '/components/alerts.php'); ?>
   <h1 class="mb-4 pb-2">View Account</h1>
   <p>Welcome to your account.</p>
   <?php
