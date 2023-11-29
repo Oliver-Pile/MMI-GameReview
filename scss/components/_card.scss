@@ -5,12 +5,19 @@
   text-decoration: none;
 
   .card-image {
-    width: 256px;
-    height: 256px;
+    width: 128px;
+    height: 128px;
     border-radius: 4px;
   }
 
   .genre-title {
     margin: auto;
+  }
+
+  @media (min-width: 576px) {
+    .card-image{
+      width: 256px;
+      height: 256px;
+    }
   }
 }
