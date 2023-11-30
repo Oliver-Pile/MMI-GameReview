@@ -46,3 +46,11 @@ CREATE TABLE IF NOT EXISTS Review_User_Join(
     FOREIGN KEY (review_id) REFERENCES Review(id),
     FOREIGN KEY (user_id) REFERENCES User(id)
 );
+
+CREATE TABLE IF NOT EXISTS User_Game_Bookmark(
+	game_id INT,
+    user_id INT,
+    PRIMARY KEY (game_id, user_id),
+    FOREIGN KEY (game_id) REFERENCES Game(id),
+    FOREIGN KEY (user_id) REFERENCES User(id)
+);
