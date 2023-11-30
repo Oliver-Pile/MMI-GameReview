@@ -46,5 +46,11 @@
       return true;
     }
 
+    public function emailExists($email) {
+      $query = "SELECT * FROM User WHERE email = :email";
+      $stmt = $this->Conn->prepare($query);
+      $stmt->execute(array(':email' => $email));
+      return $stmt->fetch();
+    }
 }
 ?>

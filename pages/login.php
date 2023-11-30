@@ -1,5 +1,5 @@
 <?php 
-  require_once(__DIR__ . '/helpers/login_helper.php')
+  require_once(__DIR__ . '/helpers/login_helper.php');
 ?>
 
 <div class="container" id="login-page">

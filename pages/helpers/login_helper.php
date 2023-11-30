@@ -6,7 +6,7 @@
     $password = htmlspecialchars($_POST["password"]);
     $confirm_password = htmlspecialchars($_POST["password_confirm"]);
 
-    $errors = validateReg($email, $username, $password, $confirm_password);
+    $errors = validateReg($email, $username, $password, $confirm_password, $User);
 
     if ($errors) {
       displayErrors($errors);
@@ -49,9 +49,10 @@
     header("Location: index.php?p=login");
   }
 
-  function validateReg($email, $username, $password, $confirm_password) {
+  function validateReg($email, $username, $password, $confirm_password, $User) {
     $errors = array();
     array_push($errors, validateEmail($email));
+    array_push($errors, validateEmailUnique($email, $User));
     array_push($errors, validateUsername($username));
     array_push($errors, validatePasswordSet($password, "Password"));
     array_push($errors, validatePasswordSet($confirm_password, "Password Confirmation"));
@@ -73,6 +74,16 @@
       $error = "Email not set";
     } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $error = "Not a valid email address";
+    } else {
+      $error = null;
+    }
+    return $error;
+  }
+
+  function validateEmailUnique($email, $User){
+    $emailExists = $User -> emailExists($email);
+    if($emailExists){
+      $error = "An account as already been registered using that email";
     } else {
       $error = null;
     }
