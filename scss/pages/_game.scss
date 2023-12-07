@@ -20,6 +20,15 @@
     height: 256px;
   }
 
+  #addBookmark, #removeBookmark{
+    text-decoration: none;
+    color: $secondary-color;
+  }
+
+  #addBookmark:hover, #removeBookmark:hover{
+    color: darken($secondary-color, 10);
+  }
+
   .review-header{
     display: flex;
     justify-content: space-between;

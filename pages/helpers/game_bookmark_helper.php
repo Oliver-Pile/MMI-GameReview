@@ -1,10 +1,11 @@
 <?php
-  function getBookmarkIcon($isBookmarked, $user){
-    if($user){
+  function getBookmarkIcon($game_id, $user_id, $Bookmark){
+    $isBookmarked = $Bookmark->isGameBookmarkedByUser($game_id, $user_id);
+    if($user_id){
       if($isBookmarked){
-        echo '<i class="fa-solid fa-bookmark"></i>';
+        echo '<a id="removeBookmark" class="fa-solid fa-bookmark px-4" data-game_id='.$game_id.'> </a>';
       } else {
-        echo '<i class="fa-regular fa-bookmark"></i>';
+        echo '<a id="addBookmark" class="fa-regular fa-bookmark px-4" data-game_id='.$game_id.'></a>';
       }
     }
   }

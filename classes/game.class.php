@@ -39,16 +39,6 @@
         ]);
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
-    public function isGameBookmarkedByUser($game_id, $user_id){
-      $query = "SELECT * FROM User_Game_Bookmark WHERE game_id = :game_id AND user_id = :user_id";
-      $stmt = $this->Conn->prepare($query);
-      $stmt->execute([
-        "game_id" => $game_id,
-        "user_id" => $user_id
-        ]);
-      return $stmt->fetch();
-    }
   }
 
 ?>

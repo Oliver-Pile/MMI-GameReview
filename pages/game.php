@@ -6,7 +6,7 @@
   $reviews = $Review->getAllReviewsForGame($game_id);
   $average_raiting = round($Review->calculateRatingForGame($game_id)["avg_rating"], 1);
   $user_id = $_SESSION["user"]["id"];
-  $isBookmarked = $Game->isGameBookmarkedByUser($game_id, $user_id);
+  $Bookmark = new Bookmark($Conn);
 ?>
 
 <div class="container" id="game-page">
@@ -15,7 +15,9 @@
     require_once(__DIR__ . '/helpers/review_helper.php'); 
     require_once(__DIR__ . '/helpers/game_bookmark_helper.php'); 
   ?>
-  <h1><?php echo $game["title"]; getBookmarkIcon($isBookmarked, $user_id)?></h1>
+  <div>
+    <h1><?php echo $game["title"];?><?php getBookmarkIcon($game_id, $user_id, $Bookmark) ?></h1>
+  </div>
   <div class="row">
     <div class="col-md-4">
     <div class="game-image" style="background-image: url(images/game-images/<?php echo $game["image"]; ?>)"></div>

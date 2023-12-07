@@ -30,3 +30,5 @@ INSERT INTO Review_Game_Join (review_id, game_id) VALUES(3, 1);
 INSERT INTO Review_User_Join (review_id, user_id) VALUES(1, 1);
 INSERT INTO Review_User_Join (review_id, user_id) VALUES(2, 1);
 INSERT INTO Review_User_Join (review_id, user_id) VALUES(3, 2);
+
+INSERT INTO User_Game_Bookmark (game_id, user_id) VALUES (1, 3);
