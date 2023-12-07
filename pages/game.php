@@ -13,7 +13,12 @@
   <?php 
     require_once(__DIR__ . '/add_review_modal.php'); 
     require_once(__DIR__ . '/helpers/review_helper.php'); 
-    require_once(__DIR__ . '/helpers/game_bookmark_helper.php'); 
+    require_once(__DIR__ . '/helpers/game_bookmark_helper.php');
+    if(!$game){
+      header("HTTP/1.0 404 Not Found");
+      echo '<h1 class="text-danger"> Warning: Game not found </h1>';
+      die();
+    }
   ?>
   <div>
     <h1><?php echo $game["title"];?><?php getBookmarkIcon($game_id, $user_id, $Bookmark) ?></h1>

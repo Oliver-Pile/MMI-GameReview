@@ -8,6 +8,13 @@
 
 
 <div class="container" id="games-for-genre-page">
+  <?php   
+    if(!$games){
+      header("HTTP/1.0 404 Not Found");
+      echo '<h1 class="text-danger"> Warning: Genre not found </h1>';
+      die();
+    }
+  ?>
   <h1><?php echo $current_genre["name"]?> Games</h1>
 
   <div class="row">
