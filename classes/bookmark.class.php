@@ -36,5 +36,17 @@
         return true; // Return false for "added"
       }
     }
+
+    public function getBookmarkedGamesForUser($user_id){
+      $query = "SELECT ga.id, ga.title, ga.image, ge.name AS genre_name 
+                FROM User_Game_Bookmark AS ub JOIN Game AS ga ON ub.game_id = ga.id 
+                JOIN Genre AS ge ON ga.genre_id = ge.id 
+                WHERE ub.user_id = :user_id ORDER BY ga.title;";
+      $stmt = $this->Conn->prepare($query);
+      $stmt->execute([
+        "user_id" => $user_id
+      ]);
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
   }
 ?>
