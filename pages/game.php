@@ -14,6 +14,8 @@
     require_once(__DIR__ . '/add_review_modal.php'); 
     require_once(__DIR__ . '/helpers/review_helper.php'); 
     require_once(__DIR__ . '/helpers/game_bookmark_helper.php');
+    require_once(__DIR__ . '/helpers/game_news_helper.php');
+
     if(!$game){
       header("HTTP/1.0 404 Not Found");
       echo '<h1 class="text-danger"> Warning: Game not found </h1>';
@@ -54,9 +56,14 @@
     </div>
     <div class="col-md-6">
       <h2> News </h2>
-      <p>
-      Ipsum dolor sit amet consectetur adipiscing elit. Turpis massa tincidunt dui ut ornare lectus sit. Quis ipsum suspendisse ultrices gravida dictum fusce. Scelerisque in dictum non consectetur a erat nam. Arcu bibendum at varius vel. Nulla pharetra diam sit amet nisl suscipit adipiscing. Sit amet consectetur adipiscing elit duis tristique sollicitudin nibh sit. Ut pharetra sit amet aliquam. Ut pharetra sit amet aliquam. Et malesuada fames ac turpis egestas integer eget aliquet nibh. Imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada. Et molestie ac feugiat sed. Enim sed faucibus turpis in eu mi bibendum neque. Eget sit amet tellus cras adipiscing enim. Non pulvinar neque laoreet suspendisse. Enim facilisis gravida neque convallis a cras semper auctor. Semper auctor neque vitae tempus quam pellentesque nec. Imperdiet proin fermentum leo vel orci porta. Purus in mollis nunc sed id semper risus in.
-      </p>
+      <?php 
+      $articles = get_latest_news($game["steam_app_id"]);
+      foreach ($articles as $article) { ?>
+      <div class="card">
+        <h3><a href="<?php echo $article["url"]?>"><?php echo $article["title"] ?></a></h3>
+        <p><?php echo $article["contents"]?></p>
+      </div>
+      <?php } ?>
     </div>
   </div>
 </div>

@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS Game(
     title VARCHAR(255) NOT NULL,
     description VARCHAR(255) NOT NULL,
 	image VARCHAR(255),
+    steam_app_id INT NOT NULL,
 	genre_id INT NOT NULL,
     FOREIGN KEY (genre_id) REFERENCES Genre(id)
 );
