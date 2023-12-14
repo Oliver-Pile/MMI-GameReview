@@ -1,35 +1,18 @@
 #home-page{
 
-  // Make it work for mobile
+  // // Make it work for mobile
   .card{
     padding: 8px;
   }
 
-  .home-info{
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 16px;
-  }
-
-  .featured-game-container{
-    width: 67.5%;
-    margin-left: auto;
-    margin-right: auto;
-    
-    .featured-game{
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-
   .game-image{
+    margin-left: auto;
+    margin-right: auto;
     width: 256px;
     height: 256px;
   }
 
   .featured-game-text{
-    width: 50%;
     margin-top: auto;
     margin-bottom: auto;
   }
