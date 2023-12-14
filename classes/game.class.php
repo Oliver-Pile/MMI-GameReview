@@ -39,6 +39,15 @@
         ]);
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getRandomGame(){
+      $query = "SELECT count(*) AS count FROM Game";
+      $stmt = $this->Conn->prepare($query);
+      $stmt->execute();
+      $total_games = $stmt->fetch(PDO::FETCH_ASSOC)["count"];
+      $rand_id = rand(1, $total_games);
+      return $this->getGame($rand_id);
+    }
   }
 
 ?>

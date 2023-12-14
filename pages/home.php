@@ -1,4 +1,8 @@
 <!-- Make random game selector then update image/text -->
+<?php
+  $Game = new Game($Conn);
+  $game = $Game->getRandomGame();
+?>
 <div class="container" id="home-page">
   <h1> Game Review </h1> 
   <div class="row">
@@ -16,11 +20,11 @@
       <h2> Featured Game </h2>
       <div class="row">
         <div class="col-md-2"></div>
-        <div class="game-image col-md-4" style="background-image: url(images/game-images/gta5_image.jpeg)"></div>
+        <div class="game-image col-md-4" style="background-image: url(images/game-images/<?php echo $game["image"]; ?>)"></div>
         <div class="card featured-game-text col-md-4">
-          <h3 class="card-title">GTA 5</h3>
+          <h3 class="card-title"><?php echo $game["title"] ?></h3>
           <p class="card-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,  
+            <?php echo $game["description"] ?>
           </p>
         </div>
         <div class="col-md-2"></div>
