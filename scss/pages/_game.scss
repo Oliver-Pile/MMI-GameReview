@@ -8,7 +8,7 @@
   }
 
   .btn-refresh {
-    color: $secondary-color;
+    color: $primary-white;
   }
 
   .row {
@@ -22,11 +22,11 @@
 
   #addBookmark, #removeBookmark{
     text-decoration: none;
-    color: $secondary-color;
+    color: $primary-white;
   }
 
   #addBookmark:hover, #removeBookmark:hover{
-    color: darken($secondary-color, 10);
+    color: darken($primary-white, 10);
   }
 
   .review-header{
