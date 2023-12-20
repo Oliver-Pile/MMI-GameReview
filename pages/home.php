@@ -1,4 +1,3 @@
-<!-- Make random game selector then update image/text -->
 <?php
   $Game = new Game($Conn);
   $game = $Game->getRandomGame();
@@ -17,10 +16,12 @@
     <div class="col-md-3"></div>
   </div>
     <div class="">
-      <h2> Featured Game </h2>
       <div class="row">
         <div class="col-md-2"></div>
-        <div class="game-image col-md-3" style="background-image: url(images/game-images/<?php echo $game["image"]; ?>)"></div>
+        <div class="col-md-3">
+          <h2> Featured Game </h2>
+          <div class="game-image" style="background-image: url(images/game-images/<?php echo $game["image"]; ?>)"></div>
+        </div>
         <div class="card featured-game-text col-md-6">
           <h3 class="card-title"><?php echo $game["title"] ?></h3>
           <p class="card-text">
