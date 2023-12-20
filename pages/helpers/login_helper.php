@@ -11,7 +11,6 @@
     if ($errors) {
       displayErrors($errors);
     } else {
-      // TODO: Verify email does not already exist
       $userCreated = $User -> createUser($email, $username, $password);
       if($userCreated) {
         $_SESSION["success_message"] = "User created - Please login";
