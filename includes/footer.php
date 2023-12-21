@@ -1,5 +1,5 @@
 </body>
-<footer class="container mt-4 text-center">
+<footer class="container">
     <p>&copy;Game Review - Created for educational purposes</p>
   </footer>
   <script type="text/javascript" src=".\node_modules\jquery\dist\jquery.min.js"></script>
