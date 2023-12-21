@@ -1,8 +1,7 @@
 {
   "name": "game-review",
   "version": "1.0.0",
-  "description": "",
-  "license": "ISC",
+  "description": "Game review website built for University",
   "repository": "https://github.com/Oliver-Pile/MMI-GameReview.git",
   "author": "S240260 <s240260@uos.ac.uk>",
   "dependencies": {
