@@ -25,6 +25,7 @@
     color: $primary-white;
   }
 
+  // Darken the bookmark icon when user is hovering over it.
   #addBookmark:hover, #removeBookmark:hover{
     color: darken($primary-white, 10);
   }

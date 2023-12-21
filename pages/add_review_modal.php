@@ -7,6 +7,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <?php if ($_SESSION["is_loggedin"]) { ?>
+        <!-- User is logged in so display form -->
         <form id="add-review-form" method="post" action="">
         <div class="modal-body">
             <div class="form-group">
@@ -23,6 +24,7 @@
           </div>
         </form>
       <?php } else { ?>
+        <!-- User is not logged in so display warning -->
         <div class="modal-body">
           <h3> Please login to create a review. </h3>
         </div>

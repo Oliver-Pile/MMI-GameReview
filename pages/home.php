@@ -1,4 +1,5 @@
 <?php
+  // Assign a random game which will be featured.
   $Game = new Game($Conn);
   $game = $Game->getRandomGame();
 ?>

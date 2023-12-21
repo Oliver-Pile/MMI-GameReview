@@ -6,6 +6,7 @@
   border-radius: 2px;
 }
 
+  // Double image size when screen is above certain width.
 @media (min-width: 768px) {
   .game-image{
     height: 256px;

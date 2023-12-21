@@ -1,4 +1,5 @@
 <?php
+  // Class responsible for managing state relating to Genres.
   class Genre{
     protected $Conn;
 
@@ -6,6 +7,7 @@
       $this->Conn = $Conn;
     }
 
+    // Function to get all genres.
     public function getAllGenres(){
       $query = "SELECT * FROM Genre";
       $stmt = $this->Conn->prepare($query);
@@ -13,6 +15,7 @@
       return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    // Function to get a specific genre
     public function getGenre($id) {
       $query = "SELECT * FROM Genre WHERE id = :id";
       $stmt = $this->Conn->prepare($query);

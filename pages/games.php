@@ -8,7 +8,8 @@
 
 
 <div class="container" id="games-for-genre-page">
-  <?php   
+  <?php
+    // If id doesnt correspond to a genre display warning and stop page execution.
     if(!$games){
       header("HTTP/1.0 404 Not Found");
       echo '<h1 class="text-danger"> Warning: Genre not found </h1>';
@@ -18,7 +19,10 @@
   <h1><?php echo $current_genre["name"]?> Games</h1>
 
   <div class="row">
-    <?php foreach($games as $game) { ?>
+    <?php 
+      // Display all games for a given genre.
+      foreach($games as $game) { 
+    ?>
       <div class="col-md-12 card">
         <div class="row game-row">
           <div class="col-md-3">

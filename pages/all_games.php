@@ -7,7 +7,10 @@
   <h1>Browse All Games</h1>
 
   <div class="row">
-    <?php foreach($games as $game) { ?>
+    <?php 
+      // Display all games
+      foreach($games as $game) { 
+    ?>
       <div class="col-6 col-lg-4">
         <?php require(__DIR__ . '/components/game_card.php'); ?>
       </div>

@@ -13,6 +13,7 @@
     color: $primary-white;
   }
 
+  // Alter button colours when user is hovering over it.
   .btn-reg:hover {
     background-color: lighten($primary-blue, 0.5);
     color: darken($primary-white, 10);

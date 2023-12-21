@@ -1,7 +1,7 @@
 USE GameReview;
 
 
-/* Insert test data for the User table */ 
+/* Insert test data for the User table - Not these cant be used to login as the passwords are not hashed */ 
 INSERT INTO User (email, username, password) VALUES("test@example.com", "Test User", "password");
 INSERT INTO User (email, username, password) VALUES("foo@example.com", "Foo User", "password");
 
@@ -31,10 +31,12 @@ INSERT INTO Review (content, raiting) VALUES("Very Good!", 5);
 INSERT INTO Review (content, raiting) VALUES("Very fun but difficult", 4);
 INSERT INTO Review (content, raiting) VALUES("Pretty good game. Lots of bugs", 3);
 
+/* Insert test data for Review/Game many-many relationship */
 INSERT INTO Review_Game_Join (review_id, game_id) VALUES(1, 1);
 INSERT INTO Review_Game_Join (review_id, game_id) VALUES(2, 1);
 INSERT INTO Review_Game_Join (review_id, game_id) VALUES(3, 1);
 
+/* Insert test data for Review/User many-many relationship */
 INSERT INTO Review_User_Join (review_id, user_id) VALUES(1, 1);
 INSERT INTO Review_User_Join (review_id, user_id) VALUES(2, 1);
 INSERT INTO Review_User_Join (review_id, user_id) VALUES(3, 2);

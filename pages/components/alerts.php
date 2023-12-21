@@ -1,4 +1,5 @@
 <?php
+  // Component responsible for displaying/handelling alerts on all pages.
   $success_message = $_SESSION["success_message"];
   $failure_message = $_SESSION["failure_message"];
 

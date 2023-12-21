@@ -13,7 +13,8 @@
   .genre-title {
     margin: auto;
   }
-
+  
+  // Double image size when screen is above certain width.
   @media (min-width: 576px) {
     .card-image{
       width: 256px;

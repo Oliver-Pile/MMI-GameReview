@@ -3,6 +3,7 @@ footer{
   text-align: center;
 }
 
+  // Double footer padding when screen is above certain width to make less obvious.
 @media (min-width: 992px) {
   footer{
     padding-top: 128px;

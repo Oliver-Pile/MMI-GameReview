@@ -16,6 +16,7 @@
     require_once(__DIR__ . '/helpers/game_bookmark_helper.php');
     require_once(__DIR__ . '/helpers/game_news_helper.php');
 
+    // If id doesnt correspond to a game display warning and stop page execution.
     if(!$game){
       header("HTTP/1.0 404 Not Found");
       echo '<h1 class="text-danger"> Warning: Game not found </h1>';
@@ -40,7 +41,10 @@
     <div class="col-md-6">
       <h2> Reviews </h2> 
       <div class="d-flex flex-column">
-        <?php foreach ($reviews as $review) { ?>
+        <?php 
+          // Display all reviews for game
+          foreach ($reviews as $review) { 
+        ?>
           <div class="card">
             <div class="card-title review-header">
               <h4 class="card-title"><?php echo $review["username"] ?></h4>
@@ -57,8 +61,10 @@
     <div class="col-md-6">
       <h2> News </h2>
       <?php 
-      $articles = get_latest_news($game["steam_app_id"]);
-      foreach ($articles as $article) { ?>
+        // Display all articles for game from API.
+        $articles = get_latest_news($game["steam_app_id"]);
+        foreach ($articles as $article) { 
+      ?>
       <div class="card">
         <h3><a href="<?php echo $article["url"]?>"><?php echo $article["title"] ?></a></h3>
         <p><?php echo $article["contents"]?></p>

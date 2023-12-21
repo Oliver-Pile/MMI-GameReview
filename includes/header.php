@@ -28,6 +28,7 @@
               <a class="nav-link" href="index.php?p=all_games"><i class="fa-solid fa-gamepad"></i>Games</a>
             </li>
             <?php if ($_SESSION['is_loggedin']) { ?>
+              <!-- Only display account/logout if the user is logged in -->
               <li class="nav-item">
                 <a class="nav-link" href="index.php?p=account"><i class="fa-solid fa-circle-user"></i>Account</a>
               </li>
@@ -35,6 +36,7 @@
                 <a class="nav-link" href="index.php?p=logout">Logout</a>
               </li>
             <?php } else { ?>
+              <!-- Only display Login/Register if the user is not logged in -->
               <li class="nav-item">
                 <a class="nav-link" href="index.php?p=login"></i>Login/Register</a>
               </li>

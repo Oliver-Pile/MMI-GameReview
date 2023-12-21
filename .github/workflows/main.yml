@@ -1,5 +1,5 @@
 on: [push]
-
+# Automated pipeline to deploy to 34SP on git push.
 jobs:
   deploy_job:
     runs-on: ubuntu-latest

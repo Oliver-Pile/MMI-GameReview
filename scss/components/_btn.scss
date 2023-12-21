@@ -3,6 +3,7 @@
   color: $text-black;
 }
 
+// Alter button colours when user is hovering over it.
 .btn-blue:hover{
   background-color: lighten($primary-blue, 0.5);
   color: $primary-white;
@@ -13,6 +14,7 @@
   color: $primary-white;
 }
 
+// Alter button colours when user is hovering over it.
 .btn-black:hover{
   background-color: lighten($primary_black, 5);
   color: darken($primary-white, 5);

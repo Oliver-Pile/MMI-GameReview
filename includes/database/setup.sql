@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS Review(
 	raiting INT
 );
 
+/* Join table for Review/Game to allow many-many relationship */
 CREATE TABLE IF NOT EXISTS Review_Game_Join(
 	review_id INT,
     game_id INT,
@@ -40,6 +41,7 @@ CREATE TABLE IF NOT EXISTS Review_Game_Join(
     FOREIGN KEY (game_id) REFERENCES Game(id)
 );
 
+/* Join table for Review/User to allow many-many relationship */
 CREATE TABLE IF NOT EXISTS Review_User_Join(
 	review_id INT,
     user_id INT,
@@ -48,6 +50,7 @@ CREATE TABLE IF NOT EXISTS Review_User_Join(
     FOREIGN KEY (user_id) REFERENCES User(id)
 );
 
+/* Join table for User/Game to allow many-many relationship for bookmarks */
 CREATE TABLE IF NOT EXISTS User_Game_Bookmark(
 	game_id INT,
     user_id INT,

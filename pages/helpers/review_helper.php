@@ -1,6 +1,6 @@
 <?php
+  // Function to display user image if set or default if not.
   function getProfilePic($review){
-    // var_dump($review["image"]);
     if ($review["image"]){
       echo $review["image"];
     } else {
