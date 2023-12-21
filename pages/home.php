@@ -23,12 +23,12 @@
           <h2> Featured Game </h2>
           <div class="game-image" style="background-image: url(images/game-images/<?php echo $game["image"]; ?>)"></div>
         </div>
-        <div class="card featured-game-text col-md-6">
+        <a class="card featured-game-text col-md-6" href="index.php?p=game&id=<?php echo $game["id"]; ?>">
           <h3 class="card-title"><?php echo $game["title"] ?></h3>
           <p class="card-text">
             <?php echo $game["description"] ?>
           </p>
-        </div>
+        </a>
         <div class="col-md-1"></div>
       </div>
     </div>
