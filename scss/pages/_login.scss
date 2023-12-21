@@ -10,6 +10,17 @@
 
   .btn-reg {
     background-color: $primary-blue;
+    color: $primary-white;
+  }
+
+  .btn-reg:hover {
+    background-color: lighten($primary-blue, 0.5);
+    color: darken($primary-white, 10);
+  }
+
+  .registration_container{
+    background-color: lighten($primary_black, 15);
+    padding: 12px;
   }
 
   form {

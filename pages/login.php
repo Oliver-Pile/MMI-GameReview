@@ -19,7 +19,7 @@
       </form>
     </div>
     <div class="col-md-1"></div>
-    <div class="col-md-3">
+    <div class="col-md-3 registration_container">
       <form id="registration-form" method="post" action="">
         <div class="form-group">
           <label for="reg_email">Email address</label>
