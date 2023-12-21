@@ -9,11 +9,11 @@
 }
 
 .btn-black{
-  background-color: $primray-black;
+  background-color: $primary_black;
   color: $primary-white;
 }
 
 .btn-black:hover{
-  background-color: lighten($primray-black, 5);
+  background-color: lighten($primary_black, 5);
   color: darken($primary-white, 5);
 }
